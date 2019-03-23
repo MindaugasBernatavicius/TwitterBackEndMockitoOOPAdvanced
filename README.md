@@ -13,7 +13,7 @@
     1. A
     1. B
 
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [x] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
+1. [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
+1. [x] list syntax required (any unordered or ordered list supported)
+1. [x] this is a complete item
+1. [ ] this is an incomplete item
