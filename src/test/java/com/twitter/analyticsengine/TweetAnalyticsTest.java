@@ -37,6 +37,7 @@ public class TweetAnalyticsTest {
     }
 
     @Test
+    // [name oftested method]_[expected input / tested state]_[expected behavior]
     public void getAvgTweetLength_givenListOfTweets_returnsCorrectAvg(){
         // Given / Arrange
         tweets = new Tweet[]{
@@ -52,7 +53,7 @@ public class TweetAnalyticsTest {
                 new User(AUTHOR_NAME, "m1ndas", 29, Sex.Male),
                 new String[]{"http://URL1","http://URL2"},
                 null,null),
-            new Tweet(2, "ABCD",
+            new Tweet(2, "ABCDEFX",
                 new User(AUTHOR_NAME, "m1ndas", 29, Sex.Male),
                 new String[]{"http://URL1","http://URL2"},
                 null,null),
@@ -66,7 +67,31 @@ public class TweetAnalyticsTest {
         double avgLen = tweetAnalytics.getAvgTweetLenght(mockTweetDao);
 
         // Then / Assert
-        Assert.assertEquals(3, avgLen, 0);
+        Assert.assertEquals(3.25, avgLen, 0);
         Mockito.verify(mockTweetDao, times(1)).getAllTweets();
     }
+
+    @Test
+    public void getAvgTweetLength_givenNullList_throwsException(){
+        // Given / Arrange
+
+        // When / Act
+
+        // Then / Assert
+
+        // Teardown
+
+    }
+
+//    @Test
+//    public void getAvgTweetLength_givenNullList_throwsException(){
+//        // Given / Arrange
+//
+//        // When / Act
+//
+//        // Then / Assert
+//
+//        // Teardown
+//
+//    }
 }
