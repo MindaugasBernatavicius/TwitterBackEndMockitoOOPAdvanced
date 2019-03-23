@@ -7,3 +7,8 @@
 4. Mock the Service class to return stubs - mockito
 5. Create the DAO (generic top level class and subclasses)
 6. Read Tweets from CSV, Comments from Word (or other text or binary files)
+
+1. X
+1. C
+  1. A
+  1. B
