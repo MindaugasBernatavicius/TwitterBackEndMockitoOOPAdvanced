@@ -11,6 +11,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import java.util.ArrayList;
+import java.util.EnumMap;
+import java.util.List;
+import java.util.Map;
+
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 
@@ -72,26 +77,39 @@ public class TweetAnalyticsTest {
     }
 
     @Test
-    public void getAvgTweetLength_givenNullList_throwsException(){
-        // Given / Arrange
+    public void getCountsPerStatus_givenEnumsetOfTweetsWStatuses_returnCorrectCountPerStatus(){
+        // given
+        List<Tweet> ageRestricted = new ArrayList<>(List.of(
+                new Tweet(66, "Text from first tweet - age restricted", null, null, null, null),
+                new Tweet(3, "Text from second tweet - age restricted", null, null, null, null),
+                new Tweet(789, "Text from third tweet - age restricted", null, null, null, null)
+        ));
 
-        // When / Act
+        List<Tweet> approvedByMach = new ArrayList<>(List.of(
+                new Tweet(2, "Text from first tweet - approvedByMach", null, null, null, null)
+        ));
 
-        // Then / Assert
+        EnumMap<Tweet.TweetStatus, List<Tweet>> tweetsWStatuses = new EnumMap<>(Tweet.TweetStatus.class){{
+            put(Tweet.TweetStatus.AGE_RESTRICTED, ageRestricted);
+            put(Tweet.TweetStatus.APPROVED_BY_MACHINE_PENDIGN_HUMAN_REVIEW, approvedByMach);
+        }};
 
-        // Teardown
+        // when
+        Mockito.when(mockTweetDao
+                .getAllTweetsGroupedByStatus())
+                .thenReturn(tweetsWStatuses);
 
+        EnumMap<Tweet.TweetStatus, Integer> countPerStatus = tweetAnalytics.getCountsPerStatus(mockTweetDao);
+
+        // then
+        Assert.assertEquals(ageRestricted.size(), (long)countPerStatus.get(Tweet.TweetStatus.AGE_RESTRICTED));
+        Assert.assertEquals(approvedByMach.size(), (long)countPerStatus.get(Tweet.TweetStatus.APPROVED_BY_MACHINE_PENDIGN_HUMAN_REVIEW));
+        Mockito.verify(mockTweetDao, times(1)).getAllTweetsGroupedByStatus();
     }
 
 //    @Test
-//    public void getAvgTweetLength_givenNullList_throwsException(){
-//        // Given / Arrange
-//
-//        // When / Act
-//
-//        // Then / Assert
-//
-//        // Teardown
-//
-//    }
+//    public void getAvgTweetLength_givenNullList_throwsException(){}
+
+//    @Test
+//    public void getAvgTweetLength_givenNullList_throwsException(){}
 }

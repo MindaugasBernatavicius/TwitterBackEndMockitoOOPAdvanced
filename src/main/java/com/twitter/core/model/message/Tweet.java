@@ -36,6 +36,7 @@ public class Tweet extends Message {
 
     @Override
     public void setText(String text) throws Exception {
+        // TODO :: implement custom exceptions
         if (text.length() < 1)
             throw new Exception("Tweent can not be shorter than: 1");
         if (text.length() > LIMIT_FOR_LENGTH)
@@ -58,4 +59,16 @@ public class Tweet extends Message {
     public void setTags(Tag[] tags) {
         this.tags = tags;
     }
+
+    // inner type
+    public enum TweetStatus {
+        PENDING_REVIEW,
+        APPROVED_BY_MACHINE_GOOD,
+        APPROVED_BY_MACHINE_PENDIGN_HUMAN_REVIEW,
+        APPROVED_BY_HUMAN_GOOD,
+        AGE_RESTRICTED,
+        BANNED
+    }
 }
+
+
