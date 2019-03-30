@@ -35,9 +35,8 @@ public class TweetAnalytics implements TweetAnalyticsI {
         EnumMap<Tweet.TweetStatus, List<Tweet>> listByStatus = tdao.getAllTweetsGroupedByStatus();
 
         EnumMap<Tweet.TweetStatus, Integer> countPerStatus = new EnumMap<>(Tweet.TweetStatus.class);
-        for (Tweet.TweetStatus key : listByStatus.keySet()) {
+        for (Tweet.TweetStatus key : listByStatus.keySet())
             countPerStatus.put(key, listByStatus.get(key).size());
-        }
 
         // then we would count the list items in the List<Tweet>
         return countPerStatus;
