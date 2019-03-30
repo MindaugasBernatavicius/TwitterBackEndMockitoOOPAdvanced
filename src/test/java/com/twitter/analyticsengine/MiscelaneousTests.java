@@ -93,11 +93,47 @@ public class MiscelaneousTests {
         System.out.println();
     }
 
-    // TASK : implement another comparator
-//    @Test
-//    public void sortingCollectionOfTags_ComparatorByNameLength() {
-//
-//    }
+    // TASK : implement another comparator - SimpaleTagComparatorByTagTextLength
+    @Test
+    public void sortingCollectionOfTags_ComparatorByTagTextLength() {
+        List<SimpleTag> intList = new ArrayList<>();
+        intList.add(new SimpleTag("AAC","AA"));
+        intList.add(new SimpleTag("BADD","AA"));
+        intList.add(new SimpleTag("CA","AA"));
+
+        Iterator itr = intList.iterator();
+        while(itr.hasNext())
+            System.out.print(((SimpleTag)itr.next()).getTagText() + " ");
+        System.out.println();
+
+        Collections.sort(intList, new SimpaleTagComparatorByTagTextLength());
+
+        Iterator itr2 = intList.iterator();
+        while(itr2.hasNext())
+            System.out.print(((SimpleTag)itr2.next()).getTagText() + " ");
+        System.out.println();
+    }
+
+    // TASK : implement another comparator - Alphabetic
+    @Test
+    public void sortingCollectionOfTags_ComparatorByTagText() {
+        List<SimpleTag> intList = new ArrayList<>();
+        intList.add(new SimpleTag("ZZZ","AA"));
+        intList.add(new SimpleTag("AAA","AA"));
+        intList.add(new SimpleTag("BBB","AA"));
+
+        Iterator itr = intList.iterator();
+        while(itr.hasNext())
+            System.out.print(((SimpleTag)itr.next()).getTagText() + " ");
+        System.out.println();
+
+        Collections.sort(intList, new SimpaleTagComparatorByTagText());
+
+        Iterator itr2 = intList.iterator();
+        while(itr2.hasNext())
+            System.out.print(((SimpleTag)itr2.next()).getTagText() + " ");
+        System.out.println();
+    }
 }
 
 class SimpaleTagComparatorByAuthorNameLength implements Comparator<SimpleTag> {
@@ -107,6 +143,16 @@ class SimpaleTagComparatorByAuthorNameLength implements Comparator<SimpleTag> {
     }
 }
 
-//class SimpaleTagComparatorByTagLength implements Comparator<SimpleTag> {
-//
-//}
+class SimpaleTagComparatorByTagTextLength implements Comparator<SimpleTag> {
+    @Override
+    public int compare(SimpleTag firstTag, SimpleTag secondTag) {
+        return (secondTag.getTagText().length() - firstTag.getTagText().length());
+    }
+}
+
+class SimpaleTagComparatorByTagText implements Comparator<SimpleTag> {
+    @Override
+    public int compare(SimpleTag firstTag, SimpleTag secondTag) {
+        return (secondTag.getTagText().compareTo(firstTag.getTagText()) * -1);
+    }
+}
