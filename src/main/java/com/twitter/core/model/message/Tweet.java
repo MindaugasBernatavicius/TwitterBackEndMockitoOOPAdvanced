@@ -38,9 +38,11 @@ public class Tweet extends Message {
     public void setText(String text) throws Exception {
         // TODO :: implement custom exceptions
         if (text.length() < 1)
-            throw new Exception("Tweent can not be shorter than: 1");
+//            throw new Exception("Tweent can not be shorter than: 1");
+            throw new TweetLenghtException("Tweent can not be shorter than: 1");
         if (text.length() > LIMIT_FOR_LENGTH)
-            throw new Exception("Tweent can not be longer than: " + LIMIT_FOR_LENGTH);
+//            throw new Exception("Tweent can not be longer than: " + LIMIT_FOR_LENGTH);
+            throw new TweetLenghtException("Tweent can not be longer than: " + LIMIT_FOR_LENGTH);
         super.text = text;
     }
 
