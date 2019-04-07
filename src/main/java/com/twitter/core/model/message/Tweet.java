@@ -62,6 +62,14 @@ public class Tweet extends Message {
         this.tags = tags;
     }
 
+    @Override
+    public String toString() {
+        return "Tweet{" +
+                "author='" +  super.getAuthor() + '\'' +
+                "text='" + text + '\'' +
+                '}';
+    }
+
     // inner type
     public enum TweetStatus {
         PENDING_REVIEW,

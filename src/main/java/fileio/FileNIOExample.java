@@ -21,9 +21,9 @@ public class FileNIOExample {
                     continue;
 
                 // System.out.println(linesOfText.get(i));
-                String[] vals = linesOfText.get(i).split(",");
+                String[] vals = linesOfText.get(i).split(";");
                 // add a new person to a list of friends
-                myFriends.add(new Person(Integer.parseInt(vals[0]), vals[1], Integer.parseInt(vals[2])));
+                myFriends.add(new Person(Integer.parseInt(vals[0]), vals[1], Integer.parseInt(vals[2]), Integer.parseInt(vals[3])));
             }
         } catch (IOException e) {
             e.printStackTrace();
