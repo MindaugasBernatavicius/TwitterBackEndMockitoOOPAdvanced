@@ -8,8 +8,5 @@ public class TwitterServiceStub implements TwitterService {
 	}
 
 	@Override
-	public void postToTimeline(String screenName, String message) {
-		
-	}
-
+	public void postToTimeline(String screenName, String message) { }
 }

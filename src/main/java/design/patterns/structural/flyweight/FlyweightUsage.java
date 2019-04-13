@@ -2,7 +2,7 @@ package design.patterns.structural.flyweight;
 
 public class FlyweightUsage {
 
-	public static void main(String args[]) throws Exception {
+	public static void main(String[] args) throws Exception {
 		
 		Integer firstInt = Integer.valueOf(5);
 		

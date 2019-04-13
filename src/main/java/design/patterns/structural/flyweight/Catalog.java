@@ -12,7 +12,7 @@ public class Catalog {
 		if (!items.containsKey(itemName))
 			items.put(itemName, new Item(itemName));
 		return items.get(itemName);
-	}
+}
 
 	public int totalItemsMade() {
 		return items.size();
