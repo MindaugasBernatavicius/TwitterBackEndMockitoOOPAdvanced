@@ -17,8 +17,7 @@ public abstract class OrderTemplate {
 		doPayment();
 		if(isGift) {
 			wrapGift();
-		}
-		else {
+		} else {
 			doReceipt();
 		}
 		

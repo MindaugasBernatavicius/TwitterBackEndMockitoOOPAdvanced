@@ -7,7 +7,6 @@ public class MementoDemo {
 		Caretaker caretaker = new Caretaker();
 		
 		Employee emp = new Employee();
-		
 		emp.setName("John Wick");
 		emp.setAddress("111 Main Street");
 		emp.setPhone("888-555-1212");

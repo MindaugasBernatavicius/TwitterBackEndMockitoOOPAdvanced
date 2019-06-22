@@ -17,7 +17,6 @@ public class MiscelaneousTests {
         SimpleTag s1 = new SimpleTag("Tag text 1", "Mindaugas");
         SimpleTag s2 = new SimpleTag("Tag text 2", "Mindaugas");
         SimpleTag s3 = new SimpleTag("Tag text 3", "Mindaugas");
-
         listOfTags.add(s1);
         listOfTags.add(s2);
         listOfTags.add(s3);

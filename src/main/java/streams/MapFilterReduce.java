@@ -30,5 +30,8 @@ public class MapFilterReduce {
 
         List<String> names = Arrays.asList("Andrew", "Brandon", "Michael");
         List namesLengths = names.stream().map(String::length).collect(Collectors.toList());
+
+
+        // TODO :: avg salary of indian employees
     }
 }
