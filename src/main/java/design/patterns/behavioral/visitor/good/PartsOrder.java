@@ -8,9 +8,7 @@ public class PartsOrder implements AtvPart {
 	
 	private List<AtvPart> parts = new ArrayList<>();
 	
-	public PartsOrder() {
-		
-	}
+	public PartsOrder() { }
 	
 	public void addPart(AtvPart atvPart) {
 		parts.add(atvPart);

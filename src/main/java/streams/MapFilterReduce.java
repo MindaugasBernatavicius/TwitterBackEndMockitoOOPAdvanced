@@ -10,7 +10,7 @@ public class MapFilterReduce {
     public static void main(String[] args){
 
         //  Get the average age of people that are above 18 from List<User>
-        List<User> myFriend = new ArrayList<>(){{
+        List<User> myFriend = new ArrayList<User>(){{
             add(new User("Mindaugas", "@m1ndas", 11, null));
             add(new User("Jonas", "@xcz", 2, null));
             add(new User("Petras", "@peter", 42, null));

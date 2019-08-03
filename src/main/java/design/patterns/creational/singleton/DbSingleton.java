@@ -11,7 +11,6 @@ public class DbSingleton {
     private static volatile Connection conn = null;
 
     private DbSingleton() {
-
         try {
             DriverManager.registerDriver(new org.apache.derby.jdbc.EmbeddedDriver());
         } catch (SQLException e) {

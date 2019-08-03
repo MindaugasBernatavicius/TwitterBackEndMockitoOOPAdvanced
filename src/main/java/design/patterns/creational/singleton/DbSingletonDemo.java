@@ -1,6 +1,5 @@
 package design.patterns.creational.singleton;
 
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,9 +24,7 @@ public class DbSingletonDemo {
         Statement sta;
         try {
             sta = conn.createStatement();
-            int count = sta
-                    .executeUpdate("CREATE TABLE Address (ID INT, StreetName VARCHAR(20),"
-                            + " City VARCHAR(20))");
+            int count = sta.executeUpdate("CREATE TABLE Address (ID INT, StreetName VARCHAR(20), City VARCHAR(20))");
             System.out.println("Table created.");
             sta.close();
 
@@ -41,7 +38,6 @@ public class DbSingletonDemo {
 
         System.out.println(timeAfter - timeBefore);
 
-
         System.out.println(conn);
 
         try {
@@ -51,7 +47,6 @@ public class DbSingletonDemo {
             System.out.println(rs);
             rs.close();
             sta.close();
-
         } catch (SQLException e) {
             e.printStackTrace();
         }

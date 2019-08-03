@@ -4,7 +4,7 @@ public abstract class Shape {
 
 	// fact that Shape uses color through compossition
     // is the bridge - the bridge is not a concrete class
-    // but rather the usage of some abstract class inside
+    // but rather the ifelse of some abstract class inside
     // of another abstract class or interface
 	protected Color color;
 	

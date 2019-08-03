@@ -29,7 +29,7 @@ public class OrderCalculator {
                     if(customerOrders.containsKey(c))
                         customerOrders.get(c).add(o);
                     else
-                        customerOrders.put(c, new ArrayList<>(){{add(o);}});
+                        customerOrders.put(c, new ArrayList<Order>(){{add(o);}});
                 }
             }
         }
