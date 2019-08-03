@@ -7,24 +7,21 @@ public class ChainOfResponsibilityDemo {
 		VP crystal = new VP();
 		CEO jeff = new CEO();
 
-		// handlers are added at the client level, we could change that but at cost of flexibility
-        // reimplemented in the spirit of fluent api principle
-		// bryan.setSuccessor(crystal).setSuccessor(jeff);
-		// crystal.setSuccessor(jeff);
-		bryan.setSuccessor(jeff).setSuccessor(crystal);
+		// ... handlers are added at the client level, we could change that but at cost of flexibility
+        // ... reimplemented in the spirit of fluent api principle - take note that the order of binding the succesors matters.
+		bryan.setSuccessor(crystal).setSuccessor(jeff);
 		
-		// Request request = new Request(RequestType.CONFERENCE, 500);
-		// bryan.handleRequest(request);
-
-		// TODO :: fix this, as it does call CEO when it should not
-		Request request = new Request(RequestType.PURCHASE, 500);
+		Request request = new Request(RequestType.CONFERENCE, 500);
 		bryan.handleRequest(request);
 
-		// request = new Request(RequestType.PURCHASE, 1000);
-		// crystal.handleRequest(request);
-		//
-		// // most importantly for Chain or responsibility
-		// request = new Request(RequestType.PURCHASE, 2000);
-		// bryan.handleRequest(request);
+		request = new Request(RequestType.PURCHASE, 500);
+		bryan.handleRequest(request);
+
+		request = new Request(RequestType.PURCHASE, 1000);
+		crystal.handleRequest(request);
+
+		// most importantly for Chain or responsibility
+		request = new Request(RequestType.PURCHASE, 2000);
+		bryan.handleRequest(request);
 	}
 }

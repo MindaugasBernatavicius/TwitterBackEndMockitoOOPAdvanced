@@ -6,9 +6,10 @@ public abstract class Handler {
 	
 	public Handler setSuccessor(Handler successor) {
 		this.successor = successor;
-		return this;
+		// ... if you want a flent and hierachical interface, like such: director.setSuccessor(vicePresident).setSuccessor(ceo);
+		// ... then be carefull  not to return "this" here as it would just reset the success for the director
+		return successor;
 	}
 	
 	public abstract void handleRequest(Request request);
-	
 }
