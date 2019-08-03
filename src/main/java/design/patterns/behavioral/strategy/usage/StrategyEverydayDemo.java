@@ -25,7 +25,8 @@ public class StrategyEverydayDemo {
 		
 		System.out.println("Not sorted");
 		printContents(people);
-		
+
+
 		Collections.sort(people, new Comparator<Person>() {
 			@Override
 			public int compare(Person o1, Person o2) {
@@ -36,10 +37,10 @@ public class StrategyEverydayDemo {
 				return 0;
 			}
 		});
-		
 		System.out.println("\nSorted by age");
 		printContents(people);
-		
+
+
 		Collections.sort(people, new Comparator<Person>() {
 			@Override
 			public int compare(Person o1, Person o2) {

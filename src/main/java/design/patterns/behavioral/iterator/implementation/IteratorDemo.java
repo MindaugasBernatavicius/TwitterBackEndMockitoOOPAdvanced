@@ -22,10 +22,9 @@ public class IteratorDemo {
 		// 	System.out.println(bike);
 		// }
 
-
 		int i = 1;
 		while(bikeIterator.hasNext()) {
-			System.out.println("|" + i + "|" + bikeIterator.next());
+			System.out.println("|" + i + "|" + bikeIterator.next() + "|");
 			i++;
 		}
 	}

@@ -14,13 +14,13 @@ public class BikeRepository implements Iterable<String> {
 	}
 	
 	public void addBike(String bike) {
+		// resize operation
 		if(index == bikes.length) {
-			String [] largerBikes = new String[bikes.length + 5];
-			System.arraycopy( bikes, 0, largerBikes, 0, bikes.length );
+			String[] largerBikes = new String[bikes.length + 5];
+			System.arraycopy(bikes, 0, largerBikes, 0, bikes.length);
 			bikes = largerBikes;
 			largerBikes = null;
 		}
-		
 		bikes[index] = bike;
 		index++;
 	}
@@ -46,7 +46,8 @@ public class BikeRepository implements Iterable<String> {
 				// implement as a homework - resize the array, shring it
 				throw new UnsupportedOperationException();
 			}
-			
+
+			// Homework suggestion: implement method go back / traverse backwards
 		};
 		
 		return it;

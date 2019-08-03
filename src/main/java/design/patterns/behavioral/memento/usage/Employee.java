@@ -1,7 +1,5 @@
 package design.patterns.behavioral.memento.usage;
 
-import design.patterns.behavioral.memento.implementation.EmployeeMemento;
-
 import java.io.Serializable;
 
 //originator
@@ -37,14 +35,5 @@ public class Employee implements Serializable {
 	
 	public String toString() {
 		return name + " : " + phone;
-	}
-	
-	public EmployeeMemento save() {
-		return new EmployeeMemento(name, phone);
-	}
-	
-	public void revert(EmployeeMemento emp) {
-		this.name = emp.getName();
-		this.phone = emp.getPhone();
 	}
 }

@@ -1,10 +1,6 @@
 package design.patterns.behavioral.memento.usage;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 public class MementoEverydayDemo {
 
@@ -19,12 +15,10 @@ public class MementoEverydayDemo {
 		} catch (ClassNotFoundException | IOException e) {
 			e.printStackTrace();
 		}
-		
 		return emp;
 	}
 
 	private static void serialize(Employee emp) {
-
 		try {
 			FileOutputStream fileOut = new FileOutputStream("./employee.ser");
 			ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -45,7 +39,6 @@ public class MementoEverydayDemo {
 		serialize(emp);
 
 		Employee newEmp = deserialize();
-		
 		System.out.println(newEmp.getName());
 	}
 }

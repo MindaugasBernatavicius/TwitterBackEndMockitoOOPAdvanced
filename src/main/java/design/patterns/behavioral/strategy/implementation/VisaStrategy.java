@@ -11,6 +11,10 @@ public class VisaStrategy extends ValidationStrategy {
 		if(isValid) {
 			isValid = creditCard.getNumber().length() == 16;
 		}
+
+		// if(isValid) {
+		// 	isValid = creditCard.getDate() > ;
+		// }
 		
 		if(isValid) {
 			isValid = passesLuhn(creditCard.getNumber());

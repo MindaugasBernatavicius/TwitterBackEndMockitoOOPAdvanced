@@ -1,6 +1,8 @@
 package design.patterns.behavioral.iterator.usage;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class IteratorEverydayDemo {
 
@@ -21,15 +23,15 @@ public class IteratorEverydayDemo {
         // 	String name = names.get(i);
         // }
 
-        for (String name : names) {
-        	System.out.println(name);
-        }
-
-        // while(namesItr.hasNext()) {
-        //     String name = namesItr.next();
-        //     System.out.println(name);
-        //     namesItr.remove();
+        // for (String name : names) {
+        // 	System.out.println(name);
         // }
+
+        while(namesItr.hasNext()) {
+            String name = namesItr.next();
+            System.out.println(name);
+            namesItr.remove();
+        }
 
         System.out.println("Names size: " + names.size());
 	}
